@@ -1,0 +1,20 @@
+{
+    "name": "Restaurante Boi na Brasa",
+    "short_name": "Boi na Brasa",
+    "start_url": "/home.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#DC3545",
+    "icons": [
+        {
+            "src": "images/icon-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "images/icon-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}

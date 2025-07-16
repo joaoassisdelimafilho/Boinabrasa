@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Cardápio Boi na Brasa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- O resto do arquivo continua igual... -->
+    <header class="admin-header">
+        <h1>Painel Administrativo</h1>
+        <p>Restaurante Boi na Brasa</p>
+    </header>
+    <main>
+        <section id="login-section" class="admin-section">
+            <h2>Acesso Restrito</h2>
+            <div class="login-form">
+                <input type="password" id="password-input" placeholder="Digite a senha">
+                <button id="login-btn">Entrar</button>
+            </div>
+        </section>
+
+        <div id="admin-panel" class="hidden">
+            <div class="admin-section">
+                <h2>Adicionar / Editar Item</h2>
+                <input type="hidden" id="edit-item-id">
+                <label for="item-category">Categoria:</label>
+                <select id="item-category">
+                    <option value="Alacarte">Alacarte</option>
+                    <option value="Marmitex">Marmitex</option>
+                    <option value="Comercial">Comercial</option>
+                    <option value="Saladas">Saladas</option>
+                    <option value="Porções">Porções</option>
+                    <option value="Omeletes">Omeletes</option>
+                    <option value="Bebidas">Bebidas</option>
+                </select>
+                <label for="item-nome">Nome do Item:</label>
+                <input type="text" id="item-nome" placeholder="Ex: Filé à Parmegiana">
+                <label for="item-descricao">Descrição:</label>
+                <input type="text" id="item-descricao" placeholder="Ex: Acompanha arroz e fritas">
+                <label for="item-preco">Preço:</label>
+                <input type="number" id="item-preco" placeholder="Ex: 45.50" step="0.01">
+                <div class="admin-form-actions">
+                    <button id="save-item-btn">Salvar Item</button>
+                    <button id="cancel-edit-btn" class="hidden">Cancelar Edição</button>
+                </div>
+            </div>
+            <div class="admin-section">
+                <h2>Itens Cadastrados</h2>
+                <div id="items-list">
+                    <p>Carregando itens...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
