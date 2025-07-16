@@ -1,62 +1,36 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio - Boi na Brasa</title>
+    <title>Restaurante Boi na Brasa</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#b82c2c"/>
 </head>
-<body>
-    <!-- O resto do arquivo continua igual... -->
-    <header>
-        <a href="index.html" class="header-link" title="Voltar para a Página Inicial">
-            <span class="title-restaurante-small">Restaurante</span>
-            <span class="title-boi-na-brasa-small">Boi na Brasa</span>
-        </a>
-    </header>
-    <nav id="category-nav"></nav>
-    <main>
-        <div id="menu-container">
-            <p class="initial-message">Carregando cardápio...</p>
+<body class="home-body">
+    <div class="home-container">
+        <div class="delivery-title-container">
+            <span class="delivery-icon">ðŸ›µ</span>
+            <h2 class="delivery-title">CardÃ¡pio Delivery</h2>
         </div>
-    </main>
-    <footer id="cart-footer">
-        <div class="cart-summary">
-            <span> Itens: <strong id="cart-count">0</strong></span>
-            <span>Total: <strong id="cart-total">R$ 0,00</strong></span>
+        <div class="home-title">
+            <span class="title-restaurante">Restaurante</span>
+            <span class="title-boi-na-brasa">Boi na Brasa</span>
         </div>
-        <button id="view-cart-btn">Finalizar Pedido</button>
-    </footer>
-    <div id="cart-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Revisar Pedido</h2>
-                <span id="close-modal-btn" class="close-btn">&times;</span>
-            </div>
-            <div id="cart-items-container"></div>
-            <div class="delivery-form">
-                <h3>Informações para Entrega</h3>
-                <input type="text" id="address-street" placeholder="Rua e Número" required>
-                <input type="text" id="address-reference" placeholder="Ponto de Referência (opcional)">
-                <h3>Forma de Pagamento</h3>
-                <select id="payment-method">
-                    <option value="Dinheiro">Dinheiro</option>
-                    <option value="Cartão">Cartão (Crédito/Débito)</option>
-                    <option value="Pix">Pix</option>
-                </select>
-                <div id="troco-section" class="hidden">
-                    <input type="number" id="troco-para" placeholder="Troco para quanto? (Ex: 50)">
-                </div>
-            </div>
-            <button id="send-order-btn" class="btn-whatsapp">
-                Confirmar e Enviar Pedido
-            </button>
+        <div class="operating-hours">
+            <p><strong>HorÃ¡rio de Funcionamento:</strong></p>
+            <p>19:00 Ã s 22:00 â€¢ Segunda a SÃ¡bado</p>
         </div>
+        <a href="cardapio.html" class="home-button">Acessar o CardÃ¡pio</a>
     </div>
-
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js');
+            });
+        }
+    </script>
 </body>
 </html>
